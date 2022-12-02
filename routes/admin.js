@@ -12,7 +12,7 @@ const products = [];
 router.get('/add-product',adminController.getAddProduct);  //using the method (getAddProduct()) from the controllers folder
 
 // /admin/products => GET
-router.get('/products',);
+router.get('/products',adminController.getProducts);
 
 // /admin/add-product => POST
 router.post('/add-product',adminController.postAddProducts );
