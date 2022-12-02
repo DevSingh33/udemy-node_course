@@ -29,8 +29,11 @@ Since arrow functions cannot bind this , it looks up into its parent scope for a
 
 
 module.exports = class Product {
-    constructor(prdctTitle) {
-        this.title = prdctTitle;
+    constructor(title,imageUrl,description,price) {
+        this.title = title;
+        this.imageUrl= imageUrl;
+        this.price= price;
+        this.description= description;
     }
 
     //saving the current 'product' object
@@ -40,7 +43,7 @@ module.exports = class Product {
             products.push(this);
             //saving the pushed data into the file
             fs.writeFile(p, JSON.stringify(products), (error) => {  //we can only save JSON in files (cuz we definesd 'products.json') so we need to use 'stringify'
-                console.log(error);
+                console.log('writting in file error:',error);
             });
         });
 
